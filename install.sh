@@ -153,4 +153,22 @@ install_tunnel(){
 
 }
 
+install_jq() {
+    if ! command -v jq &> /dev/null; then
+        # Check if the system is using apt package manager
+        if command -v apt-get &> /dev/null; then
+            echo -e "${RED}jq is not installed. Installing...${NC}"
+            sleep 1
+            sudo apt-get update
+            sudo apt-get install -y jq
+        else
+            echo -e "${RED}Error: Unsupported package manager. Please install jq manually.${NC}\n"
+            read -p "Press any key to continue..."
+            exit 1
+        fi
+    fi
+}
+
+# Install jq
+install_jq
 init
