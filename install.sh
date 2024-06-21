@@ -122,6 +122,7 @@ install_tunnel(){
 
 
         echo "Setting for IRAN VPS has been done , please complate in kharej vps"
+        ping 172.20.20.2
 
         ;;
     2)
@@ -139,7 +140,6 @@ install_tunnel(){
         ip link set GRE6Tun_To_IR mtu 1436
         ip link set GRE6Tun_To_IR up
 
-        echo "Setting for IRAN VPS has been done , please complate in kharej vps"
 
         ping 172.20.20.1
 
