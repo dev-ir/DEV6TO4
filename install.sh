@@ -7,6 +7,9 @@ YELLOW='\033[0;33m'
 plain='\033[0m'
 NC='\033[0m' # No Color
 
+install_jq
+
+
 # Get server IP
 SERVER_IP=$(hostname -I | awk '{print $1}')
 
@@ -41,12 +44,12 @@ init(){
     echo -e "${GREEN}Server ISP:${NC} $SERVER_ISP"
     echo "+---------------------------------------------------------------+"
     echo -e "${GREEN}Please choose an option:${NC}"
-    echo "+----------------------------------------------------------------+"
+    echo "+---------------------------------------------------------------+"
     echo -e "${BLUE}| 1  - Install"
     echo -e "${BLUE}| 2  - Status "
     echo -e "${BLUE}| 3  - Unistall"
     echo -e "${BLUE}| 0  - Exit"
-    echo "+----------------------------------------------------------------+"
+    echo "+---------------------------------------------------------------+"
     echo -e "\033[0m"
 
     read -p "Enter option number: " choice
@@ -170,5 +173,4 @@ install_jq() {
 }
 
 # Install jq
-install_jq
 init
