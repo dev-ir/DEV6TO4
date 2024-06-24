@@ -120,8 +120,10 @@ install_tunnel(){
         iptables -t nat -A PREROUTING -j DNAT --to-destination 172.20.20.2
         iptables -t nat -A POSTROUTING -j MASQUERADE 
 
+        echo "+----------------------------------------------------------------+"
+        echo "Setting for IRAN VPS has been done."
+        echo "+----------------------------------------------------------------+"
 
-        echo "Setting for IRAN VPS has been done , please complate in kharej vps"
         ping 172.20.20.2
 
         ;;
@@ -141,7 +143,7 @@ install_tunnel(){
         ip link set GRE6Tun_To_IR up
 
 
-        ping 172.20.20.1
+        echo 'Please Run script in IRAN VPS :)'
 
         ;;
     0)
